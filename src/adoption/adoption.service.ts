@@ -8,7 +8,10 @@ export class AdoptionService {
     async updateAnimalAdoption(id: number) {
       return await this.prisma.animal.update({
         where: {id: id},
-        data: {adopted: true},
+        data: {
+          adopted: true,
+          adoption_date: new Date()
+        },
       })
     }
 }

@@ -8,7 +8,8 @@ export class AdoptionController {
 
     @EventPattern("adopt_animal")
     async handlerAnimalAdoption(animalId: number){
-        this.adoptionService.updateAnimalAdoption(Number(animalId))
+        const res = this.adoptionService.updateAnimalAdoption(Number(animalId))
+        console.log(res)
     }
 
 }
